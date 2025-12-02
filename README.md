@@ -1,1 +1,4 @@
-# jamsoundexperience
+---
+permalink: /index.html
+
+---
