@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Content - Your Name</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .back-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-link:hover {
+            color: #667eea;
+        }
+
+        .back-link::before {
+            content: "← ";
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px 40px;
+            background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #888;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .content-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 50px 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border: 1px solid #2a2a3a;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin: 35px 0 20px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        p {
+            color: #c0c0c0;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .support-info {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .support-info p {
+            margin-bottom: 10px;
+        }
+
+        .support-info ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+
+        .support-info li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+        }
+
+        .support-info li::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: #667eea;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .included-content {
+            margin: 30px 0;
+        }
+
+        .included-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .included-content li {
+            padding: 15px 0 15px 35px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .included-content li:last-child {
+            border-bottom: none;
+        }
+
+        .included-content li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .cta-container {
+            text-align: center;
+            margin: 50px 0 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .warning {
+            background: rgba(255, 152, 0, 0.1);
+            border: 1px solid rgba(255, 152, 0, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .warning p {
+            color: #ffb74d;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .alternative-section {
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 50px 0;
+            border: 1px solid #2a2a2a;
+            text-align: center;
+        }
+
+        .alternative-section h3 {
+            margin-top: 0;
+        }
+
+        .platform-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .platform-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            border: 1px solid #2a2a2a;
+        }
+
+        .platform-link:hover {
+            background: #2a2a2a;
+            border-color: #3a3a3a;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #2a2a2a;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .content-section {
+                padding: 35px 25px;
+            }
+
+            .support-info {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="back-link">Back to Main Page</a>
+
+    <header>
+        <h1>Exclusive Content</h1>
+        <p class="subtitle">Supporting Independent Music</p>
+    </header>
+
+    <div class="container">
+        <div class="content-section">
+            <h2>Why Subscription Support?</h2>
+
+            <p>
+                Creating quality music is expensive. Studio sessions, equipment, mixing,
+                mastering, video production – it all adds up quickly.
+            </p>
+
+            <div class="support-info">
+                <p><strong>Your subscription directly funds:</strong></p>
+                <ul>
+                    <li>Studio sessions & equipment</li>
+                    <li>Music production & professional mixing</li>
+                    <li>Video production costs</li>
+                    <li>Keeping me independent (no label interference)</li>
+                </ul>
+            </div>
+
+            <h3>What's Included</h3>
+
+            <p>
+                In exchange for supporting my work, you get access to exclusive content
+                I can't share on public platforms:
+            </p>
+
+            <div class="included-content">
+                <ul>
+                    <li>Uncensored music videos (full artistic vision)</li>
+                    <!-- <li>Visual art & photography</li> -->
+                    <!-- <li>Behind-the-scenes studio content</li> -->
+                    <!-- <li>Extended director's cuts</li> -->
+                    <!-- <li>Exclusive photo sets</li> -->
+                    <!-- <li>Early access to new releases</li> -->
+                </ul>
+            </div>
+
+            <p style="margin-top: 30px;">
+                <!-- Two subscription tiers are available with different levels of access and content. -->
+            </p>
+
+            <div class="cta-container">
+                <a href="https://fansly.com/YourUsername" class="cta-button" target="_blank"
+                    rel="noopener, nofollow, noreferrer">
+                    View Subscription Options
+                </a>
+            </div>
+
+            <div class="warning">
+                <p>⚠️ This content is intended for mature audiences (18+)</p>
+            </div>
+        </div>
+
+        <div class="alternative-section">
+            <h3>Prefer to Support Just the Music?</h3>
+
+            <p>
+                Not interested in the visual content? That's totally cool.
+            </p>
+
+            <p>
+                You can also support my work by streaming and purchasing on traditional platforms:
+            </p>
+
+            <div class="platform-links">
+                <a href="#" class="platform-link">🎵 Bandcamp</a>
+                <a href="#" class="platform-link">🎵 Spotify</a>
+                <a href="#" class="platform-link">🎵 Apple Music</a>
+                <a href="#" class="platform-link">🎵 YouTube Music</a>
+            </div>
+
+            <p style="margin-top: 25px; font-size: 0.95rem; color: #888;">
+                Every stream and purchase helps fund the next project.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+        <p style="margin-top: 10px;">
+            <a href="mailto:your@email.com" style="color: #888; text-decoration: none;">Contact</a>
+        </p>
+    </footer>
+
+    <script>
+        // Optional: Track button clicks (if you want analytics)
+        document.querySelector('.cta-button').addEventListener('click', function () {
+            // Add your analytics tracking here if needed
+            console.log('Exclusive content button clicked');
+        });
+    </script>
+</body>
+
+</html>
