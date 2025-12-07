@@ -263,10 +263,29 @@
         footer {
             text-align: center;
             padding: 40px 20px;
-            color: #666;
-            font-size: 0.9rem;
+            background: #0a0a0a;
             border-top: 1px solid #2a2a2a;
             margin-top: 60px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #667eea;
         }
 
         @media (max-width: 768px) {
@@ -298,6 +317,10 @@
             .platform-link {
                 justify-content: center;
             }
+
+            .social-links {
+                gap: 15px;
+            }
         }
     </style>
 </head>
@@ -307,7 +330,7 @@
 
     <header>
         <h1>Exclusive Content</h1>
-        <p class="subtitle">Supporting Independent Music</p>
+        <p class="subtitle">Jam Sound Experience</p>
     </header>
 
     <div class="container">
@@ -338,7 +361,7 @@
                 <ul>
                     <li>Studio sessions & equipment</li>
                     <li>Music production & professional mixing</li>
-                    <li>Video production costs</li>
+                    <li>Video & animation production costs</li>
                     <li>Keeping me independent (no label interference)</li>
                 </ul>
             </div>
@@ -368,8 +391,9 @@
                     View Full Videos on Fansly
                 </a>
             </div>
-            <center style="margin-top: 25px; font-size: 0.95rem; color: #888;">Free tier available: watch more
-                previews</center>
+            <p style="margin-top: 25px; font-size: 1rem; color: #aaa; text-align: center;">
+                Free tier available: watch more previews
+            </p>
         </div>
 
         <div class="alternative-section">
@@ -384,11 +408,12 @@
             </p>
 
             <div class="platform-links">
-                <a href="#" class="platform-link">🎵 Bandcamp</a>
-                <a href="#" class="platform-link">🎵 Spotify</a>
-                <a href="#" class="platform-link">🎵 Apple Music</a>
-                <a href="#" class="platform-link">🎵 YouTube Music</a>
+                <a href="https://jamsoundexperience.bandcamp.com" class="platform-link" target="_blank"
+                    rel="noopener noreferrer">Buy on Bandcamp</a>
             </div>
+            <p style="margin-top: 30px; font-size: 0.95rem; color: #888; font-style: italic;">
+                More platforms coming soon...
+            </p>
 
             <p style="margin-top: 25px; font-size: 0.95rem; color: #888;">
                 Every stream and purchase helps fund the next project.
@@ -398,9 +423,16 @@
 
     <footer>
         <p>&copy; 2025 Jam Sound Experience. All Rights Reserved.</p>
-        <p style="margin-top: 10px;">
-            <a href="mailto:jamsoundexperience@atomicmail.io" style="color: #888; text-decoration: none;">Contact</a>
-        </p>
+        <div class="social-links">
+            <a href="mailto:jamsoundexperience@atomicmail.io" target="_blank"
+                rel="noreferrer noopener nofollow">Contact</a>
+            <a href="https://www.tiktok.com/@jamsoundexperience" target="_blank"
+                rel="noopener noreferrer nofollow">TikTok</a>
+            <a href="https://x.com/jamsoundx" target="_blank" rel="noopener noreferrer nofollow">X.com</a>
+            <a href="https://www.youtube.com/@jamsoundexperience" target="_blank"
+                rel="noopener noreferrer nofollow">YouTube</a>
+            <a href="index.html">Back to Homepage</a>
+        </div>
     </footer>
 </body>
 
