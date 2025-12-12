@@ -5,324 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exclusive Content - Jam Sound Experience</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #0a0a0a;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
-
-        .back-link {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            color: #888;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-            z-index: 100;
-        }
-
-        .back-link:hover {
-            color: #667eea;
-        }
-
-        .back-link::before {
-            content: "← ";
-        }
-
-        header {
-            text-align: center;
-            padding: 80px 20px 40px;
-            background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #ffffff;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: #888;
-            font-weight: 300;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .content-section {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            padding: 50px 40px;
-            border-radius: 12px;
-            margin: 40px 0;
-            border: 1px solid #2a2a3a;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 25px;
-            color: #ffffff;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        h3 {
-            font-size: 1.4rem;
-            margin: 35px 0 20px;
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        p {
-            color: #c0c0c0;
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            margin: 30px 0;
-            background: #000;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 8px;
-        }
-
-        .video-caption {
-            text-align: center;
-            color: #888;
-            font-size: 0.95rem;
-            margin-top: 15px;
-            font-style: italic;
-        }
-
-        .support-info {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 25px;
-            border-radius: 8px;
-            margin: 30px 0;
-            border-left: 4px solid #667eea;
-        }
-
-        .support-info p {
-            margin-bottom: 10px;
-        }
-
-        .support-info ul {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 15px;
-        }
-
-        .support-info li {
-            padding: 8px 0 8px 25px;
-            position: relative;
-        }
-
-        .support-info li::before {
-            content: "•";
-            position: absolute;
-            left: 10px;
-            color: #667eea;
-            font-size: 1.5rem;
-            line-height: 1;
-        }
-
-        .included-content {
-            margin: 30px 0;
-        }
-
-        .included-content ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .included-content li {
-            padding: 15px 0 15px 35px;
-            position: relative;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .included-content li:last-child {
-            border-bottom: none;
-        }
-
-        .included-content li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .cta-container {
-            text-align: center;
-            margin: 50px 0 30px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 18px 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
-        }
-
-        .warning {
-            background: rgba(255, 152, 0, 0.1);
-            border: 1px solid rgba(255, 152, 0, 0.3);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .warning p {
-            color: #ffb74d;
-            margin: 0;
-            font-size: 0.95rem;
-        }
-
-        .alternative-section {
-            background: #1a1a1a;
-            padding: 40px;
-            border-radius: 8px;
-            margin: 50px 0;
-            border: 1px solid #2a2a2a;
-            text-align: center;
-        }
-
-        .alternative-section h3 {
-            margin-top: 0;
-        }
-
-        .platform-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .platform-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 24px;
-            background: #0a0a0a;
-            color: #e0e0e0;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            border: 1px solid #2a2a2a;
-        }
-
-        .platform-link:hover {
-            background: #2a2a2a;
-            border-color: #3a3a3a;
-            transform: translateY(-2px);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background: #0a0a0a;
-            border-top: 1px solid #2a2a2a;
-            margin-top: 60px;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .social-links a {
-            color: #888;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #667eea;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.6rem;
-            }
-
-            .content-section {
-                padding: 35px 25px;
-            }
-
-            .support-info {
-                padding: 20px;
-            }
-
-            .alternative-section {
-                padding: 30px 20px;
-            }
-
-            .platform-links {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .platform-link {
-                justify-content: center;
-            }
-
-            .social-links {
-                gap: 15px;
-            }
-        }
-    </style>
+    <!-- Minimal Bootstrap for simple, accessible components -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -408,12 +93,16 @@
             </p>
 
             <div class="platform-links">
-                <a href="https://jamsoundexperience.bandcamp.com" class="platform-link" target="_blank"
-                    rel="noopener noreferrer">✨ Buy on Bandcamp</a>
-                <a href="https://music.apple.com/us/artist/jam-sound-experience/1859155480" class="platform-link"
-                    target="_blank" rel="noopener noreferrer">🎧 Stream On Apple Music</a>
-                <a href="https://open.spotify.com/artist/1X8CY2qhAhcefvgGZ76h33" class="platform-link" target="_blank"
-                    rel="noopener noreferrer">🎧 Stream On Spotify</a>
+                <a href="https://jamsoundexperience.bandcamp.com" class="platform-link btn btn-outline-light"
+                    target="_blank" rel="noopener noreferrer">✨ Buy on Bandcamp</a>
+                <a href="https://music.apple.com/us/artist/jam-sound-experience/1859155480"
+                    class="platform-link btn btn-outline-light" target="_blank" rel="noopener noreferrer">🎧 Stream On
+                    Apple Music</a>
+                <a href="https://open.spotify.com/artist/1X8CY2qhAhcefvgGZ76h33"
+                    class="platform-link btn btn-outline-light" target="_blank" rel="noopener noreferrer">🎧 Stream On
+                    Spotify</a>
+                <a href="licensing.html" class="platform-link btn btn-outline-primary" target="_self"
+                    rel="noopener noreferrer">Licensing</a>
                 <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
                 <script
                     type='text/javascript'>kofiwidget2.init('Tip me on Ko-fi', '#8b73f5', 'Y8Y21PXQK9'); kofiwidget2.draw();</script>
@@ -432,7 +121,10 @@
     <footer>
         <p>&copy; 2025 Jam Sound Experience. All Rights Reserved.</p>
         <div class="social-links">
-            <a href="mailto:music@jamsoundexperience.com" target="_blank" rel="noreferrer noopener nofollow">Contact</a>
+            <a href="mailto:music@jamsoundexperience.com" target="_blank" rel="noreferrer noopener nofollow">Contact:
+            </a>
+            <a href="mailto:music@jamsoundexperience.com" target="_blank"
+                rel="noreferrer noopener nofollow">music@jamsoundexperience.com</a>
             <a href="https://www.tiktok.com/@jamsoundexperience" target="_blank"
                 rel="noopener noreferrer nofollow">TikTok</a>
             <a href="https://www.instagram.com/jamsoundexperience/" target="_blank"
