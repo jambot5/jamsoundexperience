@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Strip</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: transparent;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .qr-strip {
+            display: flex;
+            gap: 15px;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 15px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            width: fit-content;
+        }
+        
+        .qr-item {
+            text-align: center;
+        }
+        
+        .qr-code {
+            background: white;
+            padding: 8px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .qr-code img {
+            display: block;
+            width: 100px;
+            height: 100px;
+        }
+        
+        .platform-name {
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .spotify { color: #1DB954; }
+        .apple { color: #FA243C; }
+        .youtube { color: #FF0000; }
+        .deezer { color: #FF6F00; }
+        .website { color: #667eea; }
+    </style>
+</head>
+<body>
+    <div class="qr-strip">
+        <div class="qr-item">
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://open.spotify.com/artist/1X8CY2qhAhcefvgGZ76h33" alt="Spotify">
+            </div>
+            <div class="platform-name spotify">Spotify</div>
+        </div>
+        
+        <div class="qr-item">
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://music.apple.com/us/artist/jam-sound-experience/1859155480" alt="Apple Music">
+            </div>
+            <div class="platform-name apple">Apple Music</div>
+        </div>
+        
+        <div class="qr-item">
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://music.youtube.com/channel/UCXdkhvqbzkBWeCR5lyzzQgw" alt="YouTube">
+            </div>
+            <div class="platform-name youtube">YouTube</div>
+        </div>
+        
+        <div class="qr-item">
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.deezer.com/en/artist/360340352" alt="Deezer">
+            </div>
+            <div class="platform-name deezer">Deezer</div>
+        </div>
+        
+        <div class="qr-item">
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://jamsoundexperience.com/" alt="Website">
+            </div>
+            <div class="platform-name website">Website</div>
+        </div>
+    </div>
+</body>
+</html>

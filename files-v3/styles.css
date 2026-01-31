@@ -434,173 +434,6 @@ h2 {
 }
 
 /* -----------------------------
-   Albums Carousel Section
-   ----------------------------- */
-.albums-section {
-    margin: 100px 0 80px;
-    padding: 60px 0;
-}
-
-.carousel-container {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 60px;
-    overflow: hidden;
-}
-
-.carousel-track {
-    display: flex;
-    gap: 30px;
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.album-card {
-    flex: 0 0 calc(33.333% - 20px);
-    min-width: 0;
-    opacity: 0;
-    animation: fadeIn 0.6s ease forwards;
-}
-
-.album-card:nth-child(1) { animation-delay: 0.1s; }
-.album-card:nth-child(2) { animation-delay: 0.2s; }
-.album-card:nth-child(3) { animation-delay: 0.3s; }
-.album-card:nth-child(4) { animation-delay: 0.4s; }
-.album-card:nth-child(5) { animation-delay: 0.5s; }
-
-.album-image {
-    position: relative;
-    width: 100%;
-    padding-bottom: 100%;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.album-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 1;
-}
-
-.album-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.album-card:hover .album-image {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-}
-
-.album-card:hover .album-image::before {
-    opacity: 1;
-}
-
-.album-card:hover .album-image img {
-    transform: scale(1.05);
-}
-
-.album-title {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    text-align: center;
-}
-
-/* Carousel Buttons */
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background: white;
-    border: 2px solid rgba(102, 126, 234, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 10;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-btn:hover:not(:disabled) {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-color: transparent;
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-}
-
-.carousel-btn:hover:not(:disabled) svg {
-    color: white;
-}
-
-.carousel-btn:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-
-.carousel-btn.prev {
-    left: 0;
-}
-
-.carousel-btn.next {
-    right: 0;
-}
-
-.carousel-btn svg {
-    color: #667eea;
-    transition: color 0.3s ease;
-}
-
-/* Carousel Dots */
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 40px;
-}
-
-.carousel-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(102, 126, 234, 0.2);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
-}
-
-.carousel-dot:hover {
-    background: rgba(102, 126, 234, 0.5);
-    transform: scale(1.2);
-}
-
-.carousel-dot.active {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    width: 32px;
-    border-radius: 6px;
-}
-
-/* -----------------------------
    Footer
    ----------------------------- */
 footer {
@@ -688,46 +521,17 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    
-    /* Carousel responsive */
-    .album-card {
-        flex: 0 0 100%;
-    }
-    
-    .carousel-container {
-        padding: 0 50px;
-    }
-    
-    .carousel-btn {
-        width: 40px;
-        height: 40px;
-    }
-    
-    .carousel-btn svg {
-        width: 20px;
-        height: 20px;
-    }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .platform-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-    /* Carousel responsive */
-    .album-card {
-        flex: 0 0 calc(50% - 15px);
-    }
 }
 
 @media (min-width: 1025px) {
     .platform-grid {
         grid-template-columns: repeat(4, 1fr);
-    }
-    
-    /* Carousel responsive */
-    .album-card {
-        flex: 0 0 calc(33.333% - 20px);
     }
 }
 
